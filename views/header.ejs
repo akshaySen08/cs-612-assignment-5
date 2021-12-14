@@ -13,10 +13,70 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <title><%= pageTitle %></title>
+
+    <style>
+      ul.breadcrumb {
+        display: inline;
+        padding: 10px 16px;
+        list-style: none;
+        background-color: #eee;
+      }
+      ul.breadcrumb li {
+        display: flex;
+        font-size: 18px;
+        flex-direction: row;
+        justify-content: center;
+      }
+      ul.breadcrumb li + li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+      }
+      ul.breadcrumb li a {
+        color: #0275d8;
+        text-decoration: none;
+        margin-left: 5px;
+      }
+      ul.breadcrumb li a:hover {
+        color: #01447e;
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <header>
     <div class="container-fluid p-5 bg-primary text-white text-center">
-        <h1><%= pageTitle %></h1>
-      </div>
+      <h1><%= pageTitle %></h1>
+    </div>
+    <div class="row">
+      <ul class="breadcrumb">
+        <% if (path === '/students') { %>
+        <li><a href="/students">Student</a></li>
+        <% } %> 
+        <% if (stud && path === `/students/${stud.uid}`) { %> <!-- student details with uid -->
+        <li>
+          <a href="/students">Student</a> <b>></b>
+          <a href="/students/<%= stud.uid %>"><%= pageTitle %> </a> 
+        </li>
+        <% } %>
+        <% if (stud && path === `/students/${stud.uid}/subjects`) { %> <!-- student with subjects -->
+          <li>
+            <a href="/students">Student</a> <b>></b>
+            <a href="/students/<%= stud.uid %>"><%= stud.name %> </a> <b>></b>
+            <a href="/students/<%= stud.uid %>/subjects">Subjects </a>
+          </li>
+          <% } %>
+          <% if (stud && path === `/students/${stud.uid}/subjects/${index}/marks`) { %> <!-- student with subjects -->
+            <li>
+              <a href="/students">Student</a> <b>></b>
+              <a href="/students/<%= stud.uid %>"><%= stud.name %> </a> <b>></b>
+              <a href="/students/<%= stud.uid %>/subjects">Subjects </a> >
+              <a href="/students/<%= stud.uid %>/subjects/<%= index %>/marks">Marks - <%= subject %>  </a>
+            </li>
+          <% } %>
+        <!-- <li><a href="#">Pictures</a></li>
+        <li><a href="#">Summer 15</a></li>
+        <li>Italy</li> -->
+      </ul>
+    </div>
   </header>
-
+</html>

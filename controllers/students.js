@@ -1,24 +1,25 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const { getJsonData } = require('./data-provider');
+const data = require('./json-data.json');
+// const Student = require('../models/studentdata.js');
 
-const Student = require('../models/studentdata.js');
 
 const router = express.Router();
 
 const getStudents = async (req, res) => {
     try {
-        const student = await Student.find();
+        const students = await data;
 
-        Student.find().then(students => {
-            res.render('students-list',
-                {
-                    students,
-                    pageTitle: 'Students',
-                    path: '/students',
-                })
-        }).catch(err => console.log({ err }))
+        res.render('students-list',
+            {
+                students,
+                pageTitle: 'Students',
+                path: '/students',
+                stud: null,
+                index: 0
+            })
         return
-        // res.status(200).json(student);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
@@ -28,13 +29,15 @@ const getspecStudent = async (req, res) => {
     const uid = req.params.uid;
 
     try {
-        const stud = await Student.findOne({ uid: uid });
-
+        // const stud = await Student.findOne({ uid: uid });
+        const stud = data.filter(stu => +stu.uid == uid)[0];
+        console.log({ stud: stud });
         res.render('student-details',
             {
-                stud,
+                stud: stud,
                 pageTitle: stud.name.toUpperCase(),
                 path: `/students/${stud.uid}`,
+                index: 0
             })
         return
         res.status(200).json(stud);
@@ -48,16 +51,16 @@ const getStuSubjects = async (req, res) => {
     const uid = req.params.uid;
 
     // const student = await Student.find();
-
-    await Student.findOne({ uid }).then(student => {
-        res.render('student-subjects',
-            {
-                subjects: student.subjects,
-                student,
-                pageTitle: `Subjects - ${student.name.toUpperCase()}`,
-                path: `/students/${student.uid}/subjects`,
-            })
-    }).catch(err => console.log({ err }))
+    const student = data.filter(stu => +stu.uid == uid)[0];
+    res.render('student-subjects',
+        {
+            subjects: student.subjects,
+            student,
+            pageTitle: `Subjects - ${student.name.toUpperCase()}`,
+            path: `/students/${student.uid}/subjects`,
+            stud: student,
+            index: 0
+        })
     return
 }
 
@@ -68,16 +71,17 @@ const getStuSubjectMarks = async (req, res) => {
         index
     } = req.params
 
-    await Student.findOne({ uid }).then(student => {
-        res.render('marks',
-            {
-                subject: student.subjects[index],
-                marks: student.marks[index],
-                student,
-                pageTitle: `Subjects - Marks - ${student.name.toUpperCase()}`,
-                path: `/students/${student.uid}/subjects/${index}/marks`,
-            })
-    }).catch(err => console.log({ err }))
+    const student = data.filter(stu => +stu.uid == uid)[0];
+    res.render('marks',
+        {
+            subject: student.subjects[index],
+            marks: student.marks[index],
+            student,
+            stud: student,
+            pageTitle: `Subjects - Marks - ${student.name.toUpperCase()}`,
+            path: `/students/${student.uid}/subjects/${index}/marks`,
+            index
+        })
     return
 }
 
