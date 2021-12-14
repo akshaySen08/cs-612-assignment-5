@@ -1,0 +1,19 @@
+<%- include('./header.ejs') %>
+<body class="">
+  <div class="m-5 container">
+    <ul class="list-group mb-3">
+      <% for( let index = 0; index < subjects.length; index++ ) { %>
+      <li class="list-group-item d-flex justify-content-between lh-sm">
+        <div>
+          <h6 class="my-0"><%= subjects[index] %></h6>
+          <small class="text-muted"
+            >Some description about subject.</small
+          >
+        </div>
+        <span class="text-muted"><a href="/students/<%= student.uid %>/subjects/<%= index %>/marks">View marks</a> </span>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</body>
+<%- include('./footer.ejs') %>

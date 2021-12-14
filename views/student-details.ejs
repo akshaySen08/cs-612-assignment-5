@@ -1,0 +1,42 @@
+<%- include('./header.ejs') %>
+<body>
+  <div class="p-5 mb-5 bg-light rounded-3">
+    <div class="container-fluid py-5 mb-5">
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Student Name</h6>
+            <small class="text-muted">First Name Last Name</small>
+          </div>
+          <span class="text-muted"><%= stud.name %> </span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">UId</h6>
+            <small class="text-muted">University Id</small>
+          </div>
+          <span class="text-muted"><%= stud.uid %></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Semester</h6>
+            <small class="text-muted">Current Semester</small>
+          </div>
+          <span class="text-muted"><%= stud.semester %></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6 class="my-0">Term</h6>
+            <small>Applied Term</small>
+          </div>
+          <span class="text-success"><%= stud.term %> </span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Subjects</span>
+          <strong><a href='/students/<%= stud.uid %>/subjects'>Click to view subjects.</a></strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+<%- include('./footer.ejs') %>
