@@ -29,6 +29,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* Routes */
 const studentrouter = require("./routes/students");
+
+app.get('/', function(req, res){
+    res.redirect('/students');
+});
+
 app.use('/students', studentrouter)
 
 
