@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
@@ -8,16 +8,16 @@ const port = 9000;
 const url = "mongodb://localhost:27017/College";
 
 /* Database Connection using mongoDB */
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
-const con = mongoose.connection;
+// mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+// const con = mongoose.connection;
 app.use(express.json());
-try {
-    con.on('open', () => {
-        console.log('connected');
-    })
-} catch (error) {
-    console.log("Error: " + error);
-}
+// try {
+//     con.on('open', () => {
+//         console.log('connected');
+//     })
+// } catch (error) {
+//     console.log("Error: " + error);
+// }
 
 /* Template Engine */
 app.set('view engine', 'ejs');
