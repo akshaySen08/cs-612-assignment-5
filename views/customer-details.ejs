@@ -1,0 +1,49 @@
+<%- include('./header.ejs') %>
+<body>
+  <div class="p-5 mb-5 bg-light rounded-3">
+    <div class="container-fluid py-5 mb-5">
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Customer Name</h6>
+            <small class="text-muted">First Name Last Name</small>
+          </div>
+          <span class="text-muted"><%= cust.name %> </span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">User Id</h6>
+            <small class="text-muted">User Id</small>
+          </div>
+          <span class="text-muted"><%= cust.uid %></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Address</h6>
+            <small class="text-muted">Address</small>
+          </div>
+          <span class="text-muted"><%= cust.address %></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Email</h6>
+            <small class="text-muted">Email</small>
+          </div>
+          <span class="text-muted"><%= cust.email %></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6 class="my-0">Phone</h6>
+            <small>Phone</small>
+          </div>
+          <span class="text-success"><%= cust.phone %> </span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Orders</span>
+          <strong><a href='/customers/<%= cust.uid %>/orders'>Click to view orders.</a></strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+<%- include('./footer.ejs') %>

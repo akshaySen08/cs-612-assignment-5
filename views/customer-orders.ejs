@@ -2,15 +2,15 @@
 <body class="">
   <div class="m-5 container">
     <ul class="list-group mb-3">
-      <% for( let index = 0; index < subjects.length; index++ ) { %>
+      <% for( let index = 0; index < orders.length; index++ ) { %>
       <li class="list-group-item d-flex justify-content-between lh-sm">
         <div>
-          <h6 class="my-0"><%= subjects[index] %></h6>
+          <h6 class="my-0"><%= orders[index] %></h6>
           <small class="text-muted"
-            >Some description about subject.</small
+            >Some description about order.</small
           >
         </div>
-        <span class="text-muted"><a href="/students/<%= student.uid %>/subjects/<%= index %>/marks">View marks</a> </span>
+        <!-- <span class="text-muted"><a href="/customers/<%= customer.uid %>/orders/<%= index %>/marks">View marks</a> </span> -->
       </li>
       <% } %>
     </ul>

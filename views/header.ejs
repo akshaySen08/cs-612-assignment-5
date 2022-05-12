@@ -49,28 +49,28 @@
     </div>
     <div class="row">
       <ul class="breadcrumb">
-        <% if (path === '/students') { %>
-        <li><a href="/students">Student</a></li>
+        <% if (path === '/customers') { %>
+        <li><a href="/customers">Customer</a></li>
         <% } %> 
-        <% if (stud && path === `/students/${stud.uid}`) { %> <!-- student details with uid -->
+        <% if (cust && path === `/customers/${cust.uid}`) { %> <!-- customer details with uid -->
         <li>
-          <a href="/students">Student</a> <b>></b>
-          <a href="/students/<%= stud.uid %>"><%= pageTitle %> </a> 
+          <a href="/customers">Customer</a> <b>></b>
+          <a href="/customers/<%= cust.uid %>"><%= pageTitle %> </a> 
         </li>
         <% } %>
-        <% if (stud && path === `/students/${stud.uid}/subjects`) { %> <!-- student with subjects -->
+        <% if (cust && path === `/customers/${cust.uid}/orders`) { %> <!-- customer with orders -->
           <li>
-            <a href="/students">Student</a> <b>></b>
-            <a href="/students/<%= stud.uid %>"><%= stud.name %> </a> <b>></b>
-            <a href="/students/<%= stud.uid %>/subjects">Subjects </a>
+            <a href="/customers">Customer</a> <b>></b>
+            <a href="/customers/<%= cust.uid %>"><%= cust.name %> </a> <b>></b>
+            <a href="/customers/<%= cust.uid %>/orders">Orders </a>
           </li>
           <% } %>
-          <% if (stud && path === `/students/${stud.uid}/subjects/${index}/marks`) { %> <!-- student with subjects -->
+          <% if (cust && path === `/customers/${cust.uid}/orders/${index}/marks`) { %> <!-- customer with orders -->
             <li>
-              <a href="/students">Student</a> <b>></b>
-              <a href="/students/<%= stud.uid %>"><%= stud.name %> </a> <b>></b>
-              <a href="/students/<%= stud.uid %>/subjects">Subjects </a> >
-              <a href="/students/<%= stud.uid %>/subjects/<%= index %>/marks">Marks - <%= subject %>  </a>
+              <a href="/customers">Customer</a> <b>></b>
+              <a href="/customers/<%= cust.uid %>"><%= cust.name %> </a> <b>></b>
+              <a href="/customers/<%= cust.uid %>/orders">Subjects </a> >
+              <a href="/customers/<%= cust.uid %>/orders/<%= index %>/marks">Marks - <%= order %>  </a>
             </li>
           <% } %>
         <!-- <li><a href="#">Pictures</a></li>

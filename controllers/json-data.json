@@ -1,87 +1,54 @@
 [
     {
         "_id": "61b272c030d5372054c64b50",
-        "subjects": [
-            "A",
-            "B",
+        "orders": [
+            "Protien bar",
+            "Xbox",
             "C"
         ],
-        "name": "Akshay Sen",
+        "name": "Genius Machado",
         "uid": "123456788",
-        "semester": "1st",
-        "term": "Fall-2021",
-        "marks": [
-            80,
-            90,
-            20
-        ]
+        "address": "Harrison",
+        "phone": "5519985730",
+        "email": "genius@gmail.com"
     },
     {
-        "_id": "61b272c830d5372054c64b51",
-        "subjects": [
-            "A",
-            "B",
-            "C"
+        "_id": "61b272c030d5372054c64b51",
+        "orders": [
+            "Water",
+            "PS5",
+            "Icecream"
         ],
-        "name": "Chandani",
-        "uid": "123456789",
-        "semester": "1st",
-        "term": "Fall-2021",
-        "marks": [
-            50,
-            60,
-            70
-        ]
+        "name": "Jamy",
+        "uid": "123456788",
+        "address": "Jersey",
+        "phone": "55199857356",
+        "email": "jamy@gmail.com"
     },
     {
-        "_id": "61b8dbeccf83d03a1812a12f",
-        "subjects": [
-            "X",
-            " Y",
-            " Z"
+        "_id": "61b272c030d5372054c64b52",
+        "orders": [
+            "Water",
+            "PS5",
+            "Icecream"
         ],
-        "marks": [
-            10,
-            20,
-            30
-        ],
-        "name": "DJ Bravo",
-        "uid": "123456790",
-        "semester": "1st",
-        "term": "Fall-2021"
+        "name": "Vivian",
+        "uid": "123456788",
+        "address": "Jersey",
+        "phone": "55199857984",
+        "email": "vivian@gmail.com"
     },
     {
-        "_id": "61b8dc18cf83d03a1812a130",
-        "subjects": [
-            "As",
-            " Bh",
-            " Zu"
+        "_id": "61b272c030d5372054c64b53",
+        "orders": [
+            "Beer",
+            "Food",
+            "CBD"
         ],
-        "marks": [
-            11,
-            23,
-            33
-        ],
-        "name": "Jack Rayn",
-        "uid": "123456791",
-        "semester": "2nd",
-        "term": "Fall-2021"
-    },
-    {
-        "_id": "61b8dc30cf83d03a1812a131",
-        "subjects": [
-            "As",
-            " Bh",
-            " Zu"
-        ],
-        "marks": [
-            19,
-            28,
-            37
-        ],
-        "name": "Jack Reecher",
-        "uid": "123456792",
-        "semester": "2nd",
-        "term": "Fall-2021"
+        "name": "Fang",
+        "uid": "123456788",
+        "address": "Harrison",
+        "phone": "5519985730",
+        "email": "fang@gmail.com"
     }
 ]

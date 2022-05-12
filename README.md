@@ -1,6 +1,6 @@
-# Students Api
+# Customers Api
 
-Some data of students and their respective subjects and marks.
+Some data of customers and their respective orders and marks.
 
 ---
 ## Requirements
@@ -60,9 +60,9 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-# Docker: student-apis-container
+# Docker: customer-apis-container
 
-Showing the list of students with options to view their subjects taken and got marks respectively.
+Showing the list of customers with options to view their orders taken and got marks respectively.
 
 ## Getting Started
 
@@ -90,13 +90,13 @@ sudo docker build -t akshaysen08/assignment-5-612
  
 ### RUN
 ```shell
-docker run --name student-apis-container -p 80:9000 -d akshaysen08/assignment-5-612
+docker run --name customer-apis-container -p 80:9000 -d akshaysen08/assignment-5-612
 ```
 
 To restart your container
 
 ```shell
-docker restart student-apis-container
+docker restart customer-apis-container
 ```
 
 

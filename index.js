@@ -28,13 +28,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* Routes */
-const studentrouter = require("./routes/students");
+const customerrouter = require("./routes/customers");
 
 app.get('/', function(req, res){
-    res.redirect('/students');
+    res.redirect('/customers');
 });
 
-app.use('/students', studentrouter)
+app.use('/customers', customerrouter)
 
 
 const errController = require('./controllers/error-controller')
